@@ -1,0 +1,50 @@
+{% load static %}
+
+<a href="/" class="logo text-center logo-light">
+  <span class="logo-lg">
+      <img src='{% static "logo_python.png" %}' alt='' height='70' />
+
+  </span>
+  <span class="logo-sm">
+      <img src='{% static "logo_python.png" %}' alt='' height='40' />
+  </span>
+</a>
+
+<div class="h-100" id="leftside-menu-container" data-simplebar>
+  <ul class="side-nav">
+
+      <li class="side-nav-item">
+          <a  href="/temperatura/"
+            aria-controls="ad" class="side-nav-link">
+              <i class="mdi mdi-city"></i>
+            <span>Temperatura</span>
+          </a>
+     </li>
+       <li class="side-nav-item">
+          <a  href="/chatBot/"
+            aria-controls="ad" class="side-nav-link">
+            <i class="mdi mdi-credit-card"></i>
+            <span>ChatBot</span>
+          </a>
+     </li>
+     <li class="side-nav-item">
+      <a  href="/arbolDecision/"
+        aria-controls="ad" class="side-nav-link">
+        <i class="mdi mdi-credit-card"></i>
+        <span>Arbol Decision</span>
+      </a>
+ </li>
+
+  </ul>
+
+  <div class="help-box text-white text-center">
+    <a href="javascript: void(0);" class="float-end close-btn text-white">
+      {# <i class="mdi mdi-close"></i> #}
+    </a>
+       <img src='{% static "app/assets/images/version.png" %}' alt='' height='40' />
+    <h5 class="mt-3">IA</h5>
+    <p class="mb-3">Version 1.0.0</p>
+  </div>
+
+  <div class="clearfix"></div>
+</div>

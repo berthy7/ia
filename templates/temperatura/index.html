@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+<link href='{% static "app/plugins/bootstrap-select-1.14.0-beta3/css/bootstrap-select.min.css" %}' rel='stylesheet' type='text/css'/>
+
+     {% include "temperatura/_form.html" %}
+
+ <div class="container-fluid">
+    <div class="row">
+{#      {% if 'ciudad_query' in privileges %}#}
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="header-title mb-3">Temperatura</h4>
+            <div class="row">
+              <div class="col-12 col-sm-3">
+                <label for="gradoCentigrado">Grado Centigrados</label>
+                <div class="form-group mb-3">
+                    <input id="gradoCentigrado" name="gradoCentigrado" type="number" class="form-control form-control-sm"
+                        placeholder="" required />
+                </div>
+            </div>
+            <div class="col-12 col-sm-3">
+              <label for="valorFahrenheit">Fahrenheit</label>
+              <div class="form-group mb-3">
+                <h4 id="valorFahrenheit" class="header-title mb-3">-</h4>
+              </div>
+          </div>
+           
+          </div>
+              <button id="btnEjecutar" type="button" class="btn btn-info mb-3" 
+                data-target="#modal" title="Ejecutar">
+                Ejecutar
+              </button>
+
+            <div class="content">
+                 <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div id="dataGrid"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+{#      {% else %}#}
+      <div class="col-12"></div>
+{#      {% end %}#}
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+{% block extrajs %}
+    <script src='{% static "app/plugins/bootstrap-select-1.14.0-beta3/js/bootstrap-select.js" %}' type='text/javascript'></script>
+
+    <script src='{% static "js/temperatura/index.js" %}'></script>
+{% endblock %}

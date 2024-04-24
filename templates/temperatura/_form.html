@@ -1,0 +1,370 @@
+
+ <div class="modal fade" id="modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Formulario de Ingreso Vehicular</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+      </div>
+      <div class="modal-body">
+        <form id="submit_form" class="pl-3 pr-3 needs-validation" novalidate>
+          <div id="div_id" class="form-group mb-3">
+            <input id="id" name="id" type="hidden" />
+          </div>
+          <div class="bordesdiv">
+              <div class="row">
+                <label for="codigo">Invitacion</label>
+              </div>
+              <div class="row">
+                  <div class="col-12 col-sm-12">
+                    <div class="form-group mb-3">
+                        <input id="invitacion" name="invitacion" type="text" class="form-control form-control-sm"
+                            placeholder="" />
+                    </div>
+                    </div>
+
+              </div>
+
+            </div>
+             </br>
+            <div class="bordesdiv">
+              <div class="row">
+                <label>Datos del Ingreso</label>
+              </div>
+              <div class="row">
+                  <div class="col-12 col-sm-4">
+                    <div class="form-group mb-3">
+                        <label >Residente que autoriza</label>
+                        <select id="fkresidente" name="fkresidente" class="form-control show-tick" required>
+
+                        </select>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-4">
+                    <div class="form-group mb-3">
+                        <label >Condominio</label>
+                        <select id="fkcondominio" name="fkcondominio" class="form-control show-tick" required>
+
+                        </select>
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-12 col-sm-4">
+                    <div class="form-group mb-3">
+                        <label >Domicilios | Nro. Interno</label>
+                        <select id="fkdestino" name="fkdestino" class="form-control show-tick" required>
+
+                        </select>
+                    </div>
+                  </div>
+                <div class="col-12 col-sm-4">
+                    <div class="form-group mb-3">
+                        <label >Tipo de Autorizacion</label>
+                        <select id="autorizacion" name="autorizacion" class="form-control show-tick" required>
+                          <option value="Residente">Residente</option>
+                          <option value="Administracion">Administracion</option>
+                          <option value="Emergencia">Emergencia</option>
+                          <option value="Negativa de Ingreso">Negativa de Ingreso</option>
+                          <option value="Otros">Otros</option>
+                        </select>
+                    </div>
+                    </div>
+              </div>
+              <div class="row">
+                  <div class="col-12 col-sm-4">
+                    <div class="form-group mb-3">
+                        <label >Tipo de Pase</label>
+                        <select id="tipoPase" name="tipoPase" class="form-control show-tick" required>
+                            <option value="Visita">Visita</option>
+                            <option value="Proveedor">Proveedor</option>
+                            <option value="Taxi">Taxi</option>
+                            <option value="Otros">Otros</option>
+                        </select>
+                    </div>
+                  </div>
+                <div class="col-12 col-sm-4">
+                    <div class="form-group mb-3">
+                        <label >Nro. de Pases</label>
+                        <select id="nroPase" name="nroPase" class="form-control show-tick" required>
+
+                        </select>
+                    </div>
+                    </div>
+                  <div class="col-12 col-sm-4">
+                    <div class="form-group mb-3">
+                        <label>Observacion</label>
+                        <input id="observacion" name="observacion" type="text" class="form-control form-control-sm"
+                            placeholder="" />
+                    </div>
+                </div>
+              </div>
+            </div>
+             </br>
+
+            <div class="bordesdiv">
+              <div class="row">
+                <label>Datos de la Visita</label>
+              </div>
+              <div class="row">
+                  <div class="col-12 col-sm-4">
+                    <div class="form-group mb-3">
+                        <label >Tipo de Documento</label>
+                        <input id="idvisita" name="idvisita" type="hidden" />
+                        <select id="tipoDocumento" name="tipoDocumento" class="form-control show-tick" required>
+                          <option value="Carnet de Identidad">Carnet de Identidad</option>
+                          <option value="Licencia de Conducir">Licencia de Conducir</option>
+                          <option value="Pasaporte">Emergencia</option>
+                          <option value="Negativa de Ingreso">Negativa de Ingreso</option>
+                          <option value="Otros">Otros</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-3">
+                    <div class="form-group mb-3">
+                        <label>Ci</label>
+                        <input id="ci" name="ci" type="text" class="form-control form-control-sm"
+                            placeholder="" required />
+                    </div>
+                    </div>
+                  <div class="col-12 col-sm-3">
+                    <div class="form-group mb-3">
+                        <label >Expedido</label>
+                        <select id="expedido" name="expedido" class="form-control show-tick">
+                          <option value="BN">BN</option>
+                          <option value="CH">CH</option>
+                            <option value="CB">CB</option>
+                            <option value="LP">LP</option>
+                            <option value="OR">OR</option>
+                            <option value="PD">PD</option>
+                            <option value="PT">PT</option>
+                             <option value="SC">SC</option>
+                             <option value="TJ">TJ</option>
+
+                        </select>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-1">
+                    <div class="form-group mb-3">
+                        <label >Buscar</label>
+                        <button id="buscar" type="button" class="btn btn-info mb-3" data-toggle="modal"
+                            data-target="#modal" title="Buscar">
+                            <i class="mdi mdi-selection-search"></i>
+                          </button>
+                    </div>
+                  </div>
+
+
+
+              </div>
+                <div class="row">
+                  <div class="col-12 col-sm-4">
+                    <div class="form-group mb-3">
+                        <label>Nombre</label>
+                        <input id="nombre" name="nombre" type="text" class="form-control form-control-sm"
+                            placeholder="" required />
+                    </div>
+                </div>
+                    <div class="col-12 col-sm-4">
+                    <div class="form-group mb-3">
+                        <label>Apellido Paterno</label>
+                        <input id="apellidop" name="apellidop" type="text" class="form-control form-control-sm"
+                            placeholder="" required />
+                    </div>
+                </div>
+                    <div class="col-12 col-sm-4">
+                    <div class="form-group mb-3">
+                        <label>Apellido Materno</label>
+                        <input id="apellidom" name="apellidom" type="text" class="form-control form-control-sm"
+                            placeholder=""/>
+                    </div>
+                </div>
+              </div>
+
+                <div class="row">
+                    <div class="mt-2">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="radioPropio" name="radioConductor" class="form-check-input">
+                            <label class="form-check-label" for="radioPropio">Vehiculo Propio</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="radioTaxi" name="radioConductor" class="form-check-input">
+                            <label class="form-check-label" for="radioTaxi">Vehiculo Taxi</label>
+                        </div>
+                    </div>
+                </div>
+                </br>
+
+                <div class="row divConductor">
+                    <label>Datos del Conductor</label>
+                  </div>
+                <div class="row divConductor">
+                      <div class="col-12 col-sm-4">
+                        <div class="form-group mb-3">
+                            <label >Tipo de Documento</label>
+                            <input id="idconductor" name="idconductor" type="hidden" />
+                            <select id="conductortipoDocumento" name="conductortipoDocumento" class="form-control show-tick" >
+                              <option value="Carnet de Identidad">Carnet de Identidad</option>
+                              <option value="Licencia de Conducir">Licencia de Conducir</option>
+                              <option value="Pasaporte">Emergencia</option>
+                              <option value="Negativa de Ingreso">Negativa de Ingreso</option>
+                              <option value="Otros">Otros</option>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-3">
+                        <div class="form-group mb-3">
+                            <label>Ci</label>
+                            <input id="conductorci" name="conductorci" type="text" class="form-control form-control-sm"
+                                placeholder=""  />
+                        </div>
+                        </div>
+                      <div class="col-12 col-sm-3">
+                        <div class="form-group mb-3">
+                            <label >Expedido</label>
+                            <select id="conductorexpedido" name="conductorexpedido" class="form-control show-tick">
+                              <option value="BN">BN</option>
+                              <option value="CH">CH</option>
+                                <option value="CB">CB</option>
+                                <option value="LP">LP</option>
+                                <option value="OR">OR</option>
+                                <option value="PD">PD</option>
+                                <option value="PT">PT</option>
+                                 <option value="SC">SC</option>
+                                 <option value="TJ">TJ</option>
+
+                            </select>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-1">
+                        <div class="form-group mb-3">
+                            <label >Buscar</label>
+                            <button id="buscar" type="button" class="btn btn-info mb-3" data-toggle="modal"
+                                data-target="#modal" title="Buscar">
+                                <i class="mdi mdi-selection-search"></i>
+                              </button>
+                        </div>
+                      </div>
+
+
+
+                  </div>
+                <div class="row divConductor">
+                      <div class="col-12 col-sm-4">
+                        <div class="form-group mb-3">
+                            <label>Nombre</label>
+                            <input id="conductornombre" name="conductornombre" type="text" class="form-control form-control-sm"
+                                placeholder=""  />
+                        </div>
+                    </div>
+                        <div class="col-12 col-sm-4">
+                        <div class="form-group mb-3">
+                            <label>Apellido Paterno</label>
+                            <input id="conductorapellidop" name="conductorapellidop" type="text" class="form-control form-control-sm"
+                                placeholder="" />
+                        </div>
+                    </div>
+                        <div class="col-12 col-sm-4">
+                        <div class="form-group mb-3">
+                            <label>Apellido Materno</label>
+                            <input id="conductorapellidom" name="conductorapellidom" type="text" class="form-control form-control-sm"
+                                placeholder=""/>
+                        </div>
+                    </div>
+                  </div>
+
+            </div>
+             </br>
+            <div class="bordesdiv">
+              <div class="row">
+                <label for="codigo">Datos del Vehiculo</label>
+              </div>
+              <div class="row">
+                  <div class="col-12 col-sm-3">
+                    <div class="form-group mb-3">
+                        <label>Placa</label>
+                        <input id="idvehiculo" name="idvehiculo" type="hidden" />
+                        <input id="placa" name="placa" type="text" class="form-control form-control-sm"
+                            placeholder="" required />
+                    </div>
+                    </div>
+                  <div class="col-12 col-sm-1">
+                    <div class="form-group mb-3">
+                        <label >Buscar</label>
+                        <button id="buscar" type="button" class="btn btn-info mb-3" data-toggle="modal"
+                            data-target="#modal" title="Buscar">
+                            <i class="mdi mdi-selection-search"></i>
+                          </button>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-3">
+                    <div class="form-group mb-3">
+                        <label>Cant. de Pasajeros</label>
+                        <input id="vehiculoPasajeros" name="vehiculoPasajeros" type="number" class="form-control form-control-sm"
+                            placeholder="" required />
+                    </div>
+                    </div>
+
+              </div>
+                <div class="row">
+                    <div class="col-12 col-sm-4">
+                    <div class="form-group mb-3">
+                        <label >Tipo de Vehiculo</label>
+                        <select id="vehiculoTipo" name="vehiculoTipo" class="form-control show-tick" required>
+                          <option value="AUTO">AUTO</option>
+                          <option value="CAMIONETA">CAMIONETA</option>
+                          <option value="VAGONETA">VAGONETA</option>
+                          <option value="JEEP">JEEP</option>
+                          <option value="CAMION">CAMION</option>
+                            <option value="MOTOCICLETA">MOTOCICLETA</option>
+                            <option value="MOTO">MOTO</option>
+                            <option value="MICRO">MICRO</option>
+                            <option value="BICICLETA">BICICLETA</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-4">
+                    <div class="form-group mb-3">
+                        <label >Color</label>
+                        <select id="vehiculoColor" name="vehiculoColor" class="form-control show-tick" required>
+                          <option value="AMARILLO">AMARILLO</option>
+                          <option value="AZUL">AZUL</option>
+                          <option value="BLANCO">BLANCO</option>
+                          <option value="CAFE">CAFE</option>
+                          <option value="CELESTE">CELESTE</option>
+                            <option value="COBRE">COBRE</option>
+                            <option value="GRIS">GRIS</option>
+                            <option value="NARANJA">NARANJA</option>
+                            <option value="NEGRO">NEGRO</option>
+                             <option value="PLATEADO">PLATEADO</option>
+                        </select>
+                    </div>
+                  </div>
+                    <div class="col-12 col-sm-4">
+                    <div class="form-group mb-3">
+                        <label >Marca</label>
+                        <select id="vehiculoMarca" name="vehiculoMarca" class="form-control show-tick" required>
+                        </select>
+                    </div>
+                  </div>
+
+
+              </div>
+
+            </div>
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button id="cerrar" type="button" class="btn btn-light" data-bs-dismiss="modal">
+          <i class="mdi mdi-close-box mr-1"></i> <span>Cerrar</span>
+        </button>
+        <button id="upsert" type="button" class="btn btn-primary">
+          <i class="mdi mdi-content-save mr-1"></i> <span>Guardar</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

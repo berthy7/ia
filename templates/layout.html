@@ -1,0 +1,252 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title >IA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+{#    <link rel='icon' href='{% static "icon.svg" %}' type='image/x-icon'>#}
+    <link rel='icon' href='{% static "logo_python.png" %}' type='image/x-icon'>
+
+    <link href='{% static "favicon.ico" %}' rel='stylesheet' type='text/css'/>
+    <link href='{% static "template/assets/css/icons.min.css" %}'  rel='stylesheet' type='text/css'/>
+    <link href='{% static "template/assets/css/vendor/dataTables.bootstrap5.css" %}'  rel='stylesheet' type='text/css'/>
+    <link href='{% static "template/assets/css/vendor/responsive.bootstrap5.css" %}'  rel='stylesheet' type='text/css'/>
+
+    <link href='{% static "app/plugins/sweetalert2-9.15.2/sweetalert2.css" %}'  rel='stylesheet' type='text/css'/>
+    <link href='{% static "app/plugins/sweetalert2-9.15.2/sweetalert2.css" %}'  rel='stylesheet' type='text/css'/>
+    <link href='{% static "template/assets/css/vendor/buttons.bootstrap5.css" %}'  rel='stylesheet' type='text/css'/>
+    <link href='{% static "template/assets/css/app.min.css" %}'  rel='stylesheet' type='text/css' id="app-style"/>
+    <link href='{% static "css/site.css" %}'  rel='stylesheet' type='text/css'/>
+    <link href='{% static "app/plugins/bootstrap-fileinput/css/fileinput.css" %}'  rel='stylesheet' type='text/css'/>
+
+    <!-- DevExtreme theme -->
+     <link href='{% static "lib/devexpress-devextreme-23.1.3/css/dx.light.css" %}'  rel='stylesheet' type='text/css'/>
+
+</head>
+
+<body class="loading" data-layout-color="light" data-leftbar-theme="dark"
+    data-layout-mode="fluid" data-rightbar-onstart="true">
+    <div class="wrapper">
+      <div class="leftside-menu">{% include "_leftbar.html" %}</div>
+      <div class="content-page">
+        <div class="content">
+          {% include "_topbar.html" %}
+
+          <div class="container-fluid">{% block content %}{% endblock %}</div>
+
+        </div>
+
+        <footer class="footer">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">2024 IA</div>
+              <div class="col-md-6">
+                  <div class="modal fade" id="modal_acercade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                      aria-labelledby="modalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel">Acerca de</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form class="pl-3 pr-3 needs-validation" novalidate enctype="multipart/form-data">
+                              <div class="row">
+                                <div class="col-12 col-sm-12">
+                              <div class="row bg-preview">
+                                <div class="col-12 content-preview">
+                                <img id="img-acercade" src="" class="img-thumbnail image-preview d-none" alt="Vista previa foto" />
+                                  <i id="icon-acercade" class="mdi app-fs-70 mdi-file-account icon-preview"></i>
+
+                                </div>
+                              </div>
+                            </div>
+                            </div>
+
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                  <div class="modal fade" id="modal-perfil" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                      aria-labelledby="modalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Perfil de Usuario</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form id="submit_form_perfil" class="pl-3 pr-3 needs-validation" novalidate>
+                                        <div class="tab-pane show active" id="bordered-tabs-preview">
+                                            <ul class="nav nav-pills bg-nav-pills nav-justified mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#perfil-general" data-bs-toggle="tab" aria-expanded="true" class="nav-link rounded-0 active">
+                                                        <i class="mdi mdi-home-variant d-md-none d-block"></i>
+                                                        <span class="d-none d-md-block">Datos Generales</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#perfil-adjuntos" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
+                                                        <i class="mdi mdi-account-circle d-md-none d-block"></i>
+                                                        <span class="d-none d-md-block">Foto</span>
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+                                            <div class="tab-content">
+                                                 <div class="tab-pane show active" id="perfil-general">
+                                                 <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group mb-3">
+                                                            <input id="perfil-idu" name="idu" type="hidden" class="item-form">
+                                                            <label for="perfil-name-user">Usuario</label>
+                                                            <input id="perfil-name-user" name="user" type="text"  class="form-control form-control-sm item-form" placeholder="" readonly>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12 col-sm-12">
+                                                        <div class="form-group mb-3">
+                                                            <label>Nueva Contraseña</label>
+                                                            <div class="input-group input-group-merge">
+                                                                <input id="perfil-new-pass" name="new-pass" type="password" class="form-control form-control-sm" placeholder="" required>
+                                                                <div class="input-group-append" data-password="false">
+                                                                    <div class="input-group-text">
+                                                                        <span class="password-eye"></span>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group mb-3">
+                                                            <label>Repetir Contraseña</label>
+                                                            <div class="input-group input-group-merge">
+                                                                <input id="perfil-new-rpass" name="new-rpass" type="password" class="form-control form-control-sm item-form" placeholder="" required>
+                                                                <div class="input-group-append" data-password="false">
+                                                                    <div class="input-group-text">
+                                                                        <span class="password-eye"></span>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <span class="form-text text-muted"><small>La contraseña nueva debe coincidir en ambos campos.</small></span>
+                                                        </div>
+                                                    </div>
+                                                      <div class="col-sm-12">
+                                                          <div class="form-group mb-3">
+                                                              <button type="button" class="btn btn-light" data-bs-dismiss="modal">
+                                                                    <i class="mdi mdi-close-box mr-1"></i> <span>Cerrar</span>
+                                                                </button>
+                                                                <button id="perfil-upd-credentials" type="button" class="btn btn-primary">
+                                                                    <i class="mdi mdi-account-key mr-1"></i> <span>Modificar</span>
+                                                                </button>
+
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                                </div>
+                                                <div class="tab-pane" id="perfil-adjuntos">
+                                                    <div class="row">
+                                                      <div class="col-12 col-sm-6">
+                                                        <button id="perfil-upd-foto" type="button" class="btn btn-primary">
+                                                          <i class="mdi mdi-content-save mr-1"></i> <span>Guardar Foto</span>
+                                                        </button>
+                                                  </div>
+                                                 </div>
+                                                <br/>
+                                                <div class="row">
+                                                    <div class="col-12 col-sm-6">
+                                                      <label>Foto</label>
+                                                      <input type="file" id="perfil-foto" name="perfil-foto" class="app-file">
+                                                     </div>
+                                                    <div class="col-12 col-sm-6">
+                                                      <div class="row bg-preview">
+                                                        <div class="col-12 content-preview">
+                                                          <img id="img-perfil-foto" src="" class="rounded-circle img-thumbnail image-preview d-none" alt="Vista previa foto" />
+
+                                                          <i id="icon-perfil-foto" class="mdi app-fs-70 mdi-account-box icon-preview"></i>
+                                                        </div>
+                                                  </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+               
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script src='{% static "template/assets/js/vendor.min.js" %}'></script>
+    <script src='{% static "template/assets/js/app.min.js" %}'></script>
+    <script src='{% static "template/assets/js/vendor/jquery.dataTables.min.js" %}'></script>
+    <script src='{% static "template/assets/js/vendor/dataTables.bootstrap5.js" %}'></script>
+    <script src='{% static "template/assets/js/vendor/dataTables.responsive.min.js" %}'></script>
+    <script src='{% static "template/assets/js/vendor/responsive.bootstrap5.min.js" %}'></script>
+
+    <script src='{% static "template/assets/js/vendor/dataTables.buttons.min.js" %}'></script>
+    <script src='{% static "template/assets/js/vendor/buttons.bootstrap5.min.js" %}'></script>
+    <script src='{% static "template/assets/js/vendor/buttons.html5.min.js" %}'></script>
+    <script src='{% static "template/assets/js/vendor/buttons.flash.min.js" %}'></script>
+    <script src='{% static "template/assets/js/vendor/buttons.print.min.js" %}'></script>
+
+    <script src='{% static "app/plugins/jquery-datatable/extensions/export/jszip.min.js" %}'></script>
+    <script src='{% static "app/plugins/jquery-datatable/extensions/export/pdfmake.min.js" %}'></script>
+    <script src='{% static "app/plugins/jquery-datatable/extensions/export/vfs_fonts.js" %}'></script>
+    <script src='{% static "app/assets/js/helper.js" %}'></script>
+    <script src='{% static "js/functions.js" %}'></script>
+
+    <!--plugins agregados a los recursos de la app-->
+    <script src='{% static "app/plugins/sweetalert2-9.15.2/sweetalert2.js" %}'></script>
+    <script src='{% static "app/assets/js/notification.js" %}'></script>
+    <script src='{% static "app/assets/js/functions.js" %}'></script>
+    <script src='{% static "js/layout.js" %}'></script>
+
+
+
+   <!-- DevExtreme scripts -->
+    <script src='{% static "lib/devexpress-devextreme-23.1.3/js/export/polyfill-7.4.0.min.js" %}'></script>
+    <script src='{% static "lib/devexpress-devextreme-23.1.3/js/export/exceljs-4.1.1.min.js" %}'></script>
+    <script src='{% static "lib/devexpress-devextreme-23.1.3/js/export/FileSaver-2.0.2.min.js" %}'></script>
+
+    <script src='{% static "lib/devexpress-devextreme-23.1.3/js/dx.all.js" %}'></script>
+    <script src='{% static "lib/devexpress-devextreme-23.1.3/js/localization/dx.messages.es.js" %}'></script>
+
+{#    <script src='{% static "lib/devexpress-devextreme-22.2.4/js/dx.all.js" %}'></script>#}
+
+    <script src='{% static "js/_componentes/devexpress/configuration.js" %}'></script>
+
+
+
+
+
+    {% block extrajs %}{% endblock %}
+  </body>
+
+
+
+
+</html>
