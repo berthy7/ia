@@ -78,6 +78,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.csrf',
             ],
         },
     },
@@ -105,7 +106,7 @@ WSGI_APPLICATION = 'server.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://postgres:root@localhost:5432/ia',
+        default='postgres://ia_j9rp_user:gC09EQEAX9Bx3DGIgcBi3WMghvIeFMxa@dpg-cokd9g779t8c73c7t6ag-a.oregon-postgres.render.com/ia_j9rp',
         conn_max_age=600
     )
 }
