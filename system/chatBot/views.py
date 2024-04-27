@@ -147,7 +147,7 @@ def entrenar(request):
         model.compile(loss='categorical_crossentropy',optimizer=sgd,metrics=['accuracy'])
 
         print("comienza el entrenamiento")
-        train_process = model.fit(np.array(train_x),np.array(train_y),epochs=10,batch_size=5,verbose=1)
+        train_process = model.fit(np.array(train_x),np.array(train_y),epochs=200,batch_size=5,verbose=1)
         #train_process = model.fit(np.array(train_x),np.array(train_y),epochs=setting.epoch,batch_size=setting.batchsize,verbose=1)
         model.save("chatbot_model.h5",train_process)
         print("modelo entrenado")

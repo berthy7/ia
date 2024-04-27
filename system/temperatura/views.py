@@ -30,7 +30,7 @@ def convertir(request,gradoCentigrado):
         )
 
         print("comienza el entrenamiento")
-        historial = modelo.fit(celsius,fahrenheit,epochs=1000,verbose= 1)
+        historial = modelo.fit(celsius,fahrenheit,epochs=200,verbose= 1)
         print("modelo entrenado")
 
         resultado = modelo.predict(x=np.array([gradoCentigrado])).tolist()
